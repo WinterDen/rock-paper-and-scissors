@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <script type="text/javascript" src="jsfile.js"></script> -->
-    <title>Document</title>
+    <title>Console game: Rock, Paper or Scissors</title>
 </head>
 <body>
     <script>    
@@ -23,7 +23,7 @@
     }
     else if (random == 3) {
       choice1 = "scissors";
-    }    
+    }
 
     function getHumanChoice () {
       let choice = prompt("What's your move?", "rock").toLowerCase();
@@ -32,38 +32,55 @@
 
     let humanScore = 0;
     let computerScore = 0;
+    let i = 0;
 
     function playRound(humanChoice, computerChoice){
       if (humanChoice == computerChoice) {
-    console.log("Its a Tie");
-  } else if (humanChoice == "paper" && computerChoice == "Rock") {
-    console.log("You Win, " +humanChoice +" beats" +computerChoice );
-  } 
-  else if (humanChoice == "paper" && computerChoice == "Scissors") {
-    console.log("You Lose, " +computerChoice +" beats" +humanChoice );
-  } 
-  else if (humanChoice == "rock" && computerChoice == "Scissors") {
-    console.log("You win," +humanChoice +" beats" +computerChoice );
-  } 
-  else if (humanChoice == "rock" && computerChoice == "Paper") {
-    console.log("You Lose," +computerChoice +" beats" +humanChoice );
-  } 
-  else if (humanChoice == "scissors" && computerChoice == "Rock") {
-    console.log("You Lose, " +computerChoice +" beats" +humanChoice );
-  } 
-  else if (humanChoice == "scissors" && computerChoice == "Paper") {
-    console.log("You Win, " +humanChoice +" beats" +computerChoice );
-  } 
-  else {
-    console.log("Your input doesn\'t match the allowed: Rock, Paper or Scissors" )
-  } 
+        console.log("It's a tie");
+      } 
+      else if (humanChoice == "rock" && computerChoice == "scissors") {
+        console.log("You win, " + humanChoice + " beats " + computerChoice + " !");
+        humanScore++;
+      } 
+      else if (humanChoice == "rock" && computerChoice == "paper") {
+        console.log("You lose, " + computerChoice + " beats " + humanChoice + " !");
+        computerScore++;
+      } 
+      else if (humanChoice == "paper" && computerChoice == "rock") {
+        console.log("You win, " + humanChoice + " beats " + computerChoice + " !");
+        humanScore++;
+      }
+      else if (humanChoice == "paper" && computerChoice == "scissors") {
+        console.log("You lose, " + computerChoice + " beats " + humanChoice + " !");
+        computerScore++;
+      }
+      else if (humanChoice == "scissors" && computerChoice == "paper") {
+        console.log("You win, " + humanChoice + " beats " + computerChoice + " !");
+        humanScore++;
+      }
+      else if (humanChoice == "scissors" && computerChoice == "rock") {
+        console.log("You lose, " + computerChoice + " beats " + humanChoice + " !");
+        computerScore++;
+      } else {
+        console.log("Wrong input")
+      }
+      
+      
     }
 
-    const humanChoice = getHumanChoice();
-    const computerChoice = choice1;
+    const humanSelection = getHumanChoice();
+    const computerSelection = choice1;
 
-    console.log(humanChoice);
-    console.log(computerChoice);
+    console.log(humanSelection);
+    console.log(computerSelection);
+    playRound(humanSelection,computerSelection);
+
+    console.log("human " + humanScore);
+    console.log("computer " +computerScore);
+
+   // function playGame() {
+      
+
 
     </script>    
 </body>
