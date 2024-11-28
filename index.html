@@ -68,21 +68,15 @@
     }
     }
 
-    const humanSelection = getHumanChoice();
-    const computerSelection = getComputerChoice(getRandomChoice());
+    let humanSelection = getHumanChoice();
+    let computerSelection = getComputerChoice(getRandomChoice());
 
     playGame()(humanSelection,computerSelection);
-
-    //getHumanChoice();
-    //getComputerChoice(getRandomChoice());
-    //playGame()(humanSelection,computerSelection);
-
-
-
-    
-    
-
     alert("Human: " + humanScore + " \nComputer : " + computerScore);
+    //playGame()(humanSelection,computerSelection);
+    //alert("Human: " + humanScore + " \nComputer : " + computerScore);
+
+
       
 
 
