@@ -34,12 +34,12 @@
     let computerScore = 0;
 
     function playGame() {
-     return function playRound(humanChoice, computerChoice){
-      if (humanChoice == computerChoice) {
+      function playRound(humanChoice, computerChoice){
+      if  (humanChoice == computerChoice) {
         alert("It's a tie");
       } 
       else if (humanChoice == "rock" && computerChoice == "scissors") {
-        alert("You win, " + humanChoice + " beats " + computerChoice + " !");
+       return alert("You win, " + humanChoice + " beats " + computerChoice + " !");
         humanScore++;
       } 
       else if (humanChoice == "rock" && computerChoice == "paper") {
@@ -64,20 +64,30 @@
       } else {
         alert("Wrong input")
       }
-      
-    }
+     }
+     return playRound(humanSelection,computerSelection);
     }
 
     let humanSelection = getHumanChoice();
     let computerSelection = getComputerChoice(getRandomChoice());
 
-    playGame()(humanSelection,computerSelection);
+    console.log(humanSelection);
+    console.log(computerSelection);
+
+    console.log(playGame(humanSelection,computerSelection));;
     alert("Human: " + humanScore + " \nComputer : " + computerScore);
-    //playGame()(humanSelection,computerSelection);
-    //alert("Human: " + humanScore + " \nComputer : " + computerScore);
+    console.log("Human: " + humanScore + " \nComputer : " + computerScore);
 
+    /*let text;
+    if (confirm("Want to play another round?") == true) {
+      console.log(getHumanChoice());
+      console.log(getComputerChoice(getRandomChoice()));
+      console.log(playGame((humanSelection,computerSelection)));
+      console.log("Human: " + humanScore + " \nComputer : " + computerScore);
+    } else {
+      text = "You declined!";
+    } */
 
-      
 
 
     </script>    
