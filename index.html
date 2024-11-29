@@ -9,7 +9,8 @@
 <body>
     <script>    
 
-   function getRandomChoice() {
+  function playRound(){
+  function getRandomChoice() {
     return Math.floor(Math.random() * 3) + 1 ;
   }
 
@@ -33,8 +34,9 @@
     let humanScore = 0;
     let computerScore = 0;
 
-    function playGame() {
-      function playRound(humanChoice, computerChoice){
+    let humanChoice = getHumanChoice();
+    let computerChoice = getComputerChoice(getRandomChoice());
+    
       if  (humanChoice == computerChoice) {
         alert("It's a tie");
       } 
@@ -65,30 +67,18 @@
         alert("Wrong input")
       }
      }
-     return playRound(humanSelection,computerSelection);
-    }
 
-    let humanSelection = getHumanChoice();
-    let computerSelection = getComputerChoice(getRandomChoice());
+   function playGame() {
+    playRound();
+    playRound();
+    playRound();
+    playRound();
+    playRound();
+   }
 
-    console.log(humanSelection);
-    console.log(computerSelection);
+   playGame();
 
-    console.log(playGame(humanSelection,computerSelection));;
-    alert("Human: " + humanScore + " \nComputer : " + computerScore);
-    console.log("Human: " + humanScore + " \nComputer : " + computerScore);
-
-    /*let text;
-    if (confirm("Want to play another round?") == true) {
-      console.log(getHumanChoice());
-      console.log(getComputerChoice(getRandomChoice()));
-      console.log(playGame((humanSelection,computerSelection)));
-      console.log("Human: " + humanScore + " \nComputer : " + computerScore);
-    } else {
-      text = "You declined!";
-    } */
-
-
+   
 
     </script>    
 </body>
