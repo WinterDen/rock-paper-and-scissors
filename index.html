@@ -14,15 +14,11 @@
 
     function scoreHuman(){
       humanScore++;
-      console.log("Score Human: ", +humanScore)
-      console.log("Score Computer: ", +computerScore)
       return humanScore;
     }
 
     function scoreComputer(){
       computerScore++;
-      console.log("Score Human: ", +humanScore)
-      console.log("Score Computer: ", +computerScore)
       return computerScore;
     }  
 
@@ -82,17 +78,39 @@
       }
      }
 
+     let round = 2;
+
    function playGame() {
+    alert("First round:")
     playRound();
+    alert("Score Human: " +humanScore + " \n Score Computer: " +computerScore);
+    alert("Next round " + round++);
     playRound();
+    alert("Score Human: " +humanScore + " \n Score Computer: " +computerScore);
+    alert("Next round " + round++);
     playRound();
+    alert("Score Human: " +humanScore + " \n Score Computer: " +computerScore);
+    alert("Next round " + round++);
     playRound();
+    alert("Score Human: " +humanScore + " \n Score Computer: " +computerScore);
+    alert("Next round " + round++);
     playRound();
+    alert("Score Human: " +humanScore + " \n Score Computer: " +computerScore);
+
+    if (humanScore > computerScore){
+      alert("You win, congrats!");
+    }
+    else if (humanScore < computerScore) {
+      alert("You lose, better luck next time!");
+    }
+    else {
+      alert("It's a Tie!")
+    }
+
    }
 
    playGame();
 
-   
 
     </script>    
 </body>
