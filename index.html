@@ -31,8 +31,19 @@
       return choice;
     }
 
-    let humanScore = 0;
-    let computerScore = 0;
+    let humanScore = -1;
+    let computerScore = -1;
+
+    function scoreHuman(){
+      humanScore++;
+      return humanScore;
+    }
+
+    function scoreComputer(){
+      computerScore++;
+      return computerScore;
+    }
+
 
     let humanChoice = getHumanChoice();
     let computerChoice = getComputerChoice(getRandomChoice());
@@ -42,30 +53,32 @@
       } 
       else if (humanChoice == "rock" && computerChoice == "scissors") {
        return alert("You win, " + humanChoice + " beats " + computerChoice + " !");
-        humanScore++;
+        scoreHuman();
       } 
       else if (humanChoice == "rock" && computerChoice == "paper") {
         alert("You lose, " + computerChoice + " beats " + humanChoice + " !");
-        computerScore++;
+        scoreComputer();
       } 
       else if (humanChoice == "paper" && computerChoice == "rock") {
         alert("You win, " + humanChoice + " beats " + computerChoice + " !");
-        humanScore++;
+        scoreHuman();
       }
       else if (humanChoice == "paper" && computerChoice == "scissors") {
         alert("You lose, " + computerChoice + " beats " + humanChoice + " !");
-        computerScore++;
+        scoreComputer();
       }
       else if (humanChoice == "scissors" && computerChoice == "paper") {
         alert("You win, " + humanChoice + " beats " + computerChoice + " !");
-        humanScore++;
+        scoreHuman();
       }
       else if (humanChoice == "scissors" && computerChoice == "rock") {
         alert("You lose, " + computerChoice + " beats " + humanChoice + " !");
-        computerScore++;
+        scoreComputer();
       } else {
         alert("Wrong input")
       }
+      console.log(scoreHuman());
+      console.log(scoreComputer());
      }
 
    function playGame() {
