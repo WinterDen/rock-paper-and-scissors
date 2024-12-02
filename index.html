@@ -7,7 +7,24 @@
     <title>Console game: Rock, Paper or Scissors</title>
 </head>
 <body>
-    <script>    
+    <script>  
+
+    let humanScore = 0;
+    let computerScore = 0;
+
+    function scoreHuman(){
+      humanScore++;
+      console.log("Score Human: ", +humanScore)
+      console.log("Score Computer: ", +computerScore)
+      return humanScore;
+    }
+
+    function scoreComputer(){
+      computerScore++;
+      console.log("Score Human: ", +humanScore)
+      console.log("Score Computer: ", +computerScore)
+      return computerScore;
+    }  
 
   function playRound(){
   function getRandomChoice() {
@@ -30,20 +47,6 @@
       let choice = prompt("What's your move?", "paper").toLowerCase();
       return choice;
     }
-
-    let humanScore = -1;
-    let computerScore = -1;
-
-    function scoreHuman(){
-      humanScore++;
-      return humanScore;
-    }
-
-    function scoreComputer(){
-      computerScore++;
-      return computerScore;
-    }
-
 
     let humanChoice = getHumanChoice();
     let computerChoice = getComputerChoice(getRandomChoice());
@@ -77,8 +80,6 @@
       } else {
         alert("Wrong input")
       }
-      console.log(scoreHuman());
-      console.log(scoreComputer());
      }
 
    function playGame() {
